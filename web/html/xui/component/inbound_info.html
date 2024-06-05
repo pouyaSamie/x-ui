@@ -42,9 +42,9 @@
 
 {{define "component/inboundInfoComponent"}}
 <div>
-    <p>协议: <a-tag color="green">[[ dbInbound.protocol ]]</a-tag></p>
-    <p>地址: <a-tag color="blue">[[ dbInbound.address ]]</a-tag></p>
-    <p>端口: <a-tag color="green">[[ dbInbound.port ]]</a-tag></p>
+    <p>protocol: <a-tag color="green">[[ dbInbound.protocol ]]</a-tag></p>
+    <p>address: <a-tag color="blue">[[ dbInbound.address ]]</a-tag></p>
+    <p>Port: <a-tag color="green">[[ dbInbound.port ]]</a-tag></p>
 
     <template v-if="dbInbound.isVMess">
         <p>uuid: <a-tag color="green">[[ inbound.uuid ]]</a-tag></p>
@@ -57,22 +57,22 @@
     </template>
 
     <template v-if="dbInbound.isTrojan">
-        <p>密码: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
+        <p>password: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isSS">
-        <p>加密: <a-tag color="green">[[ inbound.method ]]</a-tag></p>
-        <p>密码: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
+        <p>method: <a-tag color="green">[[ inbound.method ]]</a-tag></p>
+        <p>password: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isSocks">
-        <p>用户名: <a-tag color="green">[[ inbound.username ]]</a-tag></p>
-        <p>密码: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
+        <p>username: <a-tag color="green">[[ inbound.username ]]</a-tag></p>
+        <p>password: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isHTTP">
-        <p>用户名: <a-tag color="green">[[ inbound.username ]]</a-tag></p>
-        <p>密码: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
+        <p>username: <a-tag color="green">[[ inbound.username ]]</a-tag></p>
+        <p>password: <a-tag color="green">[[ inbound.password ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isVMess || dbInbound.isVLess || dbInbound.isTrojan || dbInbound.isSS">
