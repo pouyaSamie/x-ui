@@ -18,7 +18,7 @@ function LOGI() {
     echo -e "${green}[INF] $* ${plain}"
 }
 # check root
-[[ $EUID -ne 0 ]] && LOGE "错误:  必须使用root用户运行此脚本!\n" && exit 1
+[[ $EUID -ne 0 ]] && LOGE "Error: This script must be run as root user!\n" && exit 1
 
 # check os
 if [[ -f /etc/redhat-release ]]; then
@@ -36,7 +36,7 @@ elif cat /proc/version | grep -Eqi "ubuntu"; then
 elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
     release="centos"
 else
-    LOGE "未检测到系统版本，请联系脚本作者！\n" && exit 1
+    LOGE "The system version was not detected, please contact the script author!\n" && exit 1
 fi
 
 os_version=""
@@ -94,7 +94,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/pouyasamie/x-ui/master/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -113,7 +113,7 @@ update() {
         fi
         return 0
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/pouyasamie/x-ui/master/install.sh)
     if [[ $? == 0 ]]; then
         LOGI "Update completed, the panel has automatically restarted "
         exit 0
@@ -302,7 +302,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/vaxilu/x-ui/raw/master/x-ui.sh
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/pouyasamie/x-ui/raw/master/x-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
         LOGE "Failed to download the script. Please check whether the machine can connect to Github."
