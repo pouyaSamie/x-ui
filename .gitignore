@@ -8,3 +8,5 @@ x-ui-*.tar.gz
 /release.sh
 .sync*
 main
+__debug_bin2180477000
+bin/x-ui/x-ui.db
