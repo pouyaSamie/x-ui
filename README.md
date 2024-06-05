@@ -1,4 +1,4 @@
-# x-ui
+# x-ui (English Panel)
 
 Xray panel that supports multiple protocols and multiple users. this panel is https://github.com/vaxilu/x-ui but i have changed it to english and also added support for Vless with Xray version 1.70 and above.
 
